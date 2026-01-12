@@ -1,0 +1,22 @@
+{{ $image_tag := env "IMAGE_TAG" | default  (exec "../scripts/branded_image_tag.sh" (list) | trim) }}
+
+deploy:
+    GITHUB_REPOSITORY: it4change/helfa.social
+    IMAGE_TAG: {{ $image_tag }}
+    DOMAIN: helfa-social-staging.ocelot-social.it4c.org
+    REDIRECT_DOMAINS: []
+    NAMESPACE: helfa-social-staging
+    RELEASE_NAME_OCELOT: helfa-social
+    NEO4J_STORAGE: "5Gi"
+
+ocelot:
+    options:
+        PRODUCTION_DB_CLEAN_ALLOW: "false"
+        PUBLIC_REGISTRATION: "true"
+        INVITE_REGISTRATION: "true"
+        CATEGORIES_ACTIVE: "true"
+        MAX_PINNED_POSTS: "1"
+        BADGES_ENABLED: "true"
+        NETWORK_NAME: "helfa.social"
+        ASK_FOR_REAL_NAME: "false"
+        REQUIRE_LOCATION: "true"
