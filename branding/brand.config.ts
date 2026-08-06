@@ -6,7 +6,7 @@
 // vanilla, so most of the old constants files map to nothing at all here:
 //   • donation (gradient), group name lengths, the logo header width/click, the landing page and the
 //     footer order all already MATCH the framework default;
-//   • there was no THEME_COLOR, so the brand keeps the framework palette (no theme.cssVars).
+//   • there was no THEME_COLOR, so the brand keeps the framework palette (no theme stylesheet).
 //
 // Content layout (one served assets folder, dynamically bound at runtime): assets/ = images,
 // html/ = static page HTML per locale. Paths are ROOT-relative; the multi-brand build namespaces
